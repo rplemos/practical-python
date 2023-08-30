@@ -10,8 +10,12 @@ def read_portfolio(filename):
         rows = csv.reader(f)
         headers = next(rows)
         for row in rows:
-            holding = (row[0], int(row[1]), float(row[2]))
-            portfolio.append(holding)
+            entry = {
+                'name':row[0],
+                'shares':int(row[1]),
+                'price':float(row[2])
+            }
+            portfolio.append(entry)
     return portfolio
 
 def calculate(portfolio):
@@ -21,7 +25,7 @@ def calculate(portfolio):
     return total
 
 portfolio = read_portfolio('Data/portfolio.csv')
-total = calculate(portfolio)
+#total = calculate(portfolio)
 
-print("Portfolio: ", portfolio)
-print("Total: ", total)
+#print("Portfolio: ", portfolio)
+print(portfolio[0])

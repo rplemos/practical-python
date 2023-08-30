@@ -10,5 +10,5 @@ def cost(filename):
                 print("Couldn't parse", line)
     return(total)        
 
-portfolio = cost('Data/missing.csv')
+portfolio = cost('Data/portfolio.csv')
 print(portfolio)
